@@ -26,7 +26,7 @@ export default function App() {
         <SwiperSlide>
           <section
             className="relative w-full h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-6"
-            style={{ backgroundImage: `url('./img/LPHero.png')` }}
+            style={{ backgroundImage: `url('/lp/img/LPHero.png')` }}
           >
 
             {/* 🔥 中央下・大きめボタン2つ */}
@@ -64,7 +64,7 @@ export default function App() {
         <SwiperSlide>
           <section
             className="relative w-full h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-6"
-            style={{ backgroundImage: `url('./img/kyoukan.png')` }}
+            style={{ backgroundImage: `url('/lp/img/kyoukan.png')` }}
           >
           </section>
         </SwiperSlide>
@@ -73,7 +73,7 @@ export default function App() {
         <SwiperSlide>
           <section
             className="relative w-full h-screen bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-6"
-            style={{ backgroundImage: `url('./img/sokyuu.png')` }}
+            style={{ backgroundImage: `url('/lp/img/sokyuu.png')` }}
           >
           </section>
         </SwiperSlide>
@@ -124,7 +124,7 @@ export default function App() {
               {/* スライド1 */}
               <SwiperSlide>
                 <img
-                  src="./img/ba1.png"
+                  src="/lp/img/ba1.png"
                   alt="Before After 1"
                   className="rounded-xl shadow object-cover w-full max-h-96"
                 />
@@ -133,7 +133,7 @@ export default function App() {
               {/* スライド2 */}
               <SwiperSlide>
                 <img
-                  src="./img/ba2.png"
+                  src="/lp/img/ba2.png"
                   alt="Before After 2"
                   className="rounded-xl shadow object-cover w-full max-h-96"
                 />

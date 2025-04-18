@@ -8,7 +8,7 @@ export default function DesktopLP() {
   <div
     className="absolute inset-0 z-0"
     style={{
-      backgroundImage: `url('./img/LPHero.png')`,
+      backgroundImage: `url('/lp/img/LPHero.png')`,
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -44,7 +44,7 @@ export default function DesktopLP() {
     <div
       className="absolute inset-0 z-0"
       style={{
-        backgroundImage: `url('./img/${img}')`,
+        backgroundImage: `url('/lp/img/${img}')`,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -85,7 +85,7 @@ export default function DesktopLP() {
           <h2 className="text-xl font-bold mb-4 text-gray-800">Before / After</h2>
           <div className="grid grid-cols-2 gap-6">
             {["ba1.png", "ba2.png"].map((img, i) => (
-              <img key={i} src={`./img/${img}`} alt={img} className="rounded-xl shadow object-cover w-full max-h-96" />
+              <img key={i} src={`/lp/img/${img}`} alt={img} className="rounded-xl shadow object-cover w-full max-h-96" />
             ))}
           </div>
         </div>
