@@ -16,7 +16,7 @@ export default function Home() {
             disableOnInteraction: false,
           }}
         >
-          {['SALE10.png', 'SALE10P.png', 'slider1.png'].map((img, i) => (
+          {['SALE10.png', 'SALE10P.png'].map((img, i) => (
             <SwiperSlide key={i}>
               <img
                 src={`/img/${img}`}

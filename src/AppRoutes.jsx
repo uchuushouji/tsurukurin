@@ -21,7 +21,7 @@ export default function App() {
       {/* 泡背景 */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
         <img
-          src="img/bubble.png"
+          src="/img/bubble.png"
           alt="泡"
           className="absolute bottom-0 left-0 w-full max-h-[50%] object-cover opacity-60"
         />
@@ -37,7 +37,7 @@ export default function App() {
             <Link to="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-md">
                 <img
-                  src="img/logo.png"
+                  src="/img/logo.png"
                   alt="つるクリン ロゴ"
                   className="w-full h-full object-cover"
                 />
