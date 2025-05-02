@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Home, Sparkles, CreditCard, Mail } from 'lucide-react';
+import { BsLine } from 'react-icons/bs'; // LINEアイコン
 
 export default function Navbar() {
   const location = useLocation();
@@ -7,48 +8,56 @@ export default function Navbar() {
   const items = [
     { to: '/', label: 'ホーム', icon: <Home size={20} /> },
     { to: '/services', label: 'サービス', icon: <Sparkles size={20} /> },
-    { to: '/pricing', label: '料金', icon: <CreditCard size={20} /> },
     { to: '/contact', label: '問合せ', icon: <Mail size={20} /> },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-50 py-2">
-      
-      {/* 背景画像を下に入れる */}
-      <img
-  src="/img/bubble.png"
-  alt="泡"
-  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen z-0 pointer-events-none"
-/>
+    <nav className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md z-50 py-2 bg-white/90 backdrop-blur-md rounded-full shadow-lg">
+  <ul
+    className="flex justify-around items-center m-0 p-0 relative"
+    style={{ listStyle: 'none' }}
+  >
+    {items.map(({ to, label, icon }) => {
+      const isActive = location.pathname === to;
+      return (
+        <li key={to} className="flex flex-col items-center justify-center text-xs">
+          <Link
+            to={to}
+            className="flex flex-col items-center justify-center text-xs w-16"
+          >
+            <div
+              className={`p-2 rounded-full shadow-md transition-transform ${
+                isActive
+                  ? 'bg-sky-500 text-white scale-110'
+                  : 'bg-white/70 text-blue-700 hover:scale-105'
+              }`}
+            >
+              {icon}
+            </div>
+            <span className={`mt-1 ${isActive ? 'text-blue-700 font-bold' : 'text-gray-500'}`}>
+              {label}
+            </span>
+          </Link>
+        </li>
+      );
+    })}
 
-      
-      <ul
-        className="flex justify-around items-center m-0 p-0 z-10 relative"
-        style={{ listStyle: 'none' }} // ← ← ← これでドット完全に消す！
+    {/* LINEボタン（常時表示） */}
+    <li className="flex flex-col items-center justify-center text-xs">
+      <a
+        href="https://line.me/R/ti/p/148uaduk"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center justify-center text-xs w-16"
       >
-        {items.map(({ to, label, icon }) => {
-          const isActive = location.pathname === to;
-          return (
-            <li key={to} className="flex flex-col items-center justify-center text-xs">
-              <Link
-                to={to}
-                className="flex flex-col items-center justify-center text-xs w-16"
-              >
-                <div
-                  className={`p-3 rounded-full shadow-md mb-1 transition-transform ${
-                    isActive ? 'bg-sky-300 scale-110' : 'bg-sky-100 hover:scale-105'
-                  }`}
-                >
-                  {icon}
-                </div>
-                <span className={isActive ? 'text-blue-600 font-bold' : ''}>
-                  {label}
-                </span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+        <div className="p-2 rounded-full shadow-md bg-green-500 text-white hover:scale-105 transition-transform">
+          <BsLine size={20} />
+        </div>
+        <span className="mt-1 text-green-600 font-bold">LINE</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
   );
 }
